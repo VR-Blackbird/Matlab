@@ -20,7 +20,8 @@ for iter = 1:num_iters
 
 
 
-
+    hypt = (X * theta);
+    theta = theta - ((alpha/m) * (X' * (hypt - y) ));
 
 
 
