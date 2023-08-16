@@ -1,11 +1,8 @@
-function theta = gradientDescent(x, y, theta, alpha, total, iterations)
-  
-  for iter = 1:iterations
-    
-    hyp = x * theta;
-    
-    theta = theta - ((alpha/total) * (x' * (hyp - y)));
+function theta = gradientDescent(X, Y, theta, learning_rate, m, iterations)
+  J = 0;
+  hold on;
+  for i= 1:iterations
+    h = hyp(X, Y, theta);
+    slope = X' * ( h - Y);
+    theta = theta - (learning_rate/m) * slope;
   end
-  
-  
-end

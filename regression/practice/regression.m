@@ -1,36 +1,23 @@
-data = load('ex1data1.txt');
+data = load("ex1data1.txt");
 
-% Plot data
-
-x = data(:, 1);
-y = data(:, 2);
-total = length(y);
-
-plot(x, y, "gx");
-
-% Add ones initially
-x = [[ones(total, 1)] [x]];
+X = data(:, 1);
+Y = data(:, 2);
 
 
-theta = zeros(2, 1);
-
-alpha = 0.01;
-iterations = 1500;
-
-% Just to view working of cost function
-J = cost(x, y, theta, total);
-
-
-
-% Perform gradient descent and calculate the value of theta
-
-theta = gradientDescent(x, y, theta, alpha, total, iterations);
+plot(X, Y, 'r x');
 hold on;
-plot(x(:, end), (x * theta), "r-");
+one = ones(length(Y), 1);
 
+X = [one X];
 
-% Predict random value
-predict = 11;
-y = [1 predict] * theta
+initial_theta = zeros(2, 1);
+learning_rate = 0.01;
+m = length(X);
 
-plot(predict, y, "bs");
+n = 1500;
+
+theta = gradientDescent(X, Y, initial_theta, learning_rate, m, n);
+
+plot(X(:, 2), hyp(X, Y, theta), "b-");
+hold off;
+vals = plotJ(X, Y, m);
