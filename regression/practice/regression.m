@@ -22,4 +22,4 @@ plot(X(:, 2), hyp(X, Y, theta), "b-");
 hold off;
 vals = plotJ(X, Y, m);
 
-plot(1:n, J_hist);
+plot(1:n, J_hist, 'r-');
