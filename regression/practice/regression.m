@@ -14,10 +14,12 @@ initial_theta = zeros(2, 1);
 learning_rate = 0.01;
 m = length(X);
 
-n = 1500;
+n = 1600;
 
-theta = gradientDescent(X, Y, initial_theta, learning_rate, m, n);
+[theta, J_hist] = gradientDescent(X, Y, initial_theta, learning_rate, m, n);
 
 plot(X(:, 2), hyp(X, Y, theta), "b-");
 hold off;
 vals = plotJ(X, Y, m);
+
+plot(1:n, J_hist);
