@@ -20,6 +20,6 @@ n = 1600;
 
 plot(X(:, 2), hyp(X, Y, theta), "b-");
 hold off;
+plot(1:n, J_hist, 'r-');
 vals = plotJ(X, Y, m);
 
-plot(1:n, J_hist, 'r-');

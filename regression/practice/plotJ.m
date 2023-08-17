@@ -1,5 +1,5 @@
 function J_vals = plotJ(X, y, m) 
-
+  hold on;
   theta0_vals = linspace(-10, 10, 100);
   theta1_vals = linspace(-1, 4, 100);
 
