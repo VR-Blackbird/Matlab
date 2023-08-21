@@ -1,4 +1,4 @@
-function h = hypothesis(X, Y, theta)
+function h = hypothesis(X, theta)
   
   
   linear_hypothesis = X * theta;
